@@ -8,7 +8,7 @@ const app = express();
 // Middlewares
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
-app.use(express.static(__dirname + "public")); // for serving static files
+app.use(express.static("public")); // for serving static files
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(express.json()); // for parsing application/json
 
