@@ -5,15 +5,15 @@ const linkController = require("./src/controllers/linkController");
 
 const app = express();
 
-app.set("view engine", "ejs");
-
 // Middlewares
-app.use(express.static("public")); // for serving static files
+app.set("views", __dirname + "/views");
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + "public")); // for serving static files
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(express.json()); // for parsing application/json
 
 app.get("/home", (req, res) => {
-    res.render(__dirname + "/views/home");
+    res.render("home");
 });
 
 app.get("/register", (req, res) => {
