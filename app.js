@@ -2,10 +2,16 @@ const express = require("express");
 const ejs = require("ejs");
 const linkRoute = require("./src/routes/linkRoute");
 const linkController = require("./src/controllers/linkController");
+const path = require("path");
 
 const app = express();
 
-app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
+console.log(`Views directory is set to: ${app.get("views")}`);
+console.log(
+    `Attempting to render home from: ${path.join(app.get("views"), "home.ejs")}`
+);
 
 // Middlewares
 app.use(express.static("public")); // for serving static files
