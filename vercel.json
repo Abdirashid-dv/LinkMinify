@@ -1,24 +1,14 @@
 {
   "version": 2,
   "routes": [
-    {
-      "src": "/css/(.*)",
-      "headers": { "cache-control": "s-maxage=31536000, immutable" },
-      "dest": "/public/css/$1"
-    },
-    {
-      "src": "/js/(.*)",
-      "headers": { "cache-control": "s-maxage=31536000, immutable" },
-      "dest": "/public/js/$1"
-    },
-    {
-      "src": "/imgs/(.*)",
-      "dest": "/public/imgs/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/app.js"
-    }
+    { "src": "/css/(.*)", "dest": "/public/css/$1" },
+    { "src": "/js/(.*)", "dest": "/public/js/$1" },
+    { "src": "/imgs/(.*)", "dest": "/public/imgs/$1" },
+    { "src": "/(.*)", "dest": "/app.js" }
+  ],
+  "builds": [
+    { "src": "app.js", "use": "@vercel/node" }
   ]
 }
+
 
