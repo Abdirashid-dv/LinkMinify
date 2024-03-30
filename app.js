@@ -2,6 +2,7 @@ const express = require("express");
 const ejs = require("ejs");
 const linkRoute = require("./src/routes/linkRoute");
 const linkController = require("./src/controllers/linkController");
+const connectDB = require("./src/config/db");
 const path = require("path");
 
 const app = express();
@@ -10,7 +11,7 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.use(express.static(__dirname+"/public/")); // for serving static files
+app.use(express.static(__dirname + "/public/")); // for serving static files
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(express.json()); // for parsing application/json
 
@@ -32,6 +33,9 @@ app.use((req, res, next) => {
 
 app.get("/*", linkController.redirectUrl);
 app.use("/api/v1", linkRoute);
+
+// Connect to database
+connectDB();
 
 const PORT = process.env.PORT || 3000;
 
