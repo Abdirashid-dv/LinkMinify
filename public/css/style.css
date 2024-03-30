@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* fonts 1*/
+    --font-family-1: "Inter", sans-serif;
+    --font-weight-light-1: 300;
+    --font-weight-regular-1: 400;
+    --font-weight-medium-1: 500;
+    --font-weight-semi-bold-1: 600;
+    --font-weight-bold-1: 700;
+    --font-weight-extra-bold-1: 800;
+    --font-weight-black-1: 900;
+
+    /* fonts 2 */
+    --font-family-2: "Poppins", sans-serif;
+    --font-weight-light-2: 300;
+    --font-weight-regular-2: 400;
+    --font-weight-medium-2: 500;
+    --font-weight-semi-bold-2: 600;
+    --font-weight-bold-2: 700;
+    --font-weight-extra-bold-2: 800;
+    --font-weight-black-2: 900;
+
+    /* colors */
+    --color-dots: #dff54f45;
+    --color-secondary: #202020;
+    --color-primary: #3361cf;
+}
+
+body {
+    background-color: var(--color-secondary);
+    background-image: radial-gradient(
+            var(--color-dots) 0.8px,
+            transparent 0.8px
+        ),
+        radial-gradient(var(--color-dots) 0.8px, var(--color-secondary) 0.8px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-secondary);
+    border-bottom: 1px solid #fff;
+    font-family: var(--font-family-2);
+    font-weight: var(--font-weight-medium-2);
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+}
+.navigation-item {
+    margin-right: 1rem;
+    list-style-type: none;
+}
+
+.navigation-item .nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+.navigation-item:last-child {
+    background-color: #3361cf;
+    padding: 0.5rem 1rem;
+}
+main {
+    padding: 2rem;
+}
+
+main section {
+    display: grid;
+    place-items: center;
+    font-family: var(--font-family-1);
+    font-weight: var(--font-weight-regular-1);
+    padding: 2rem;
+}
+
+.visually-hidden {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    text-transform: uppercase;
+    /* font-size: 4rem; */
+    font-size: clamp(2rem, 1.5172rem + 2.7586vw, 4rem);
+}
+
+/* CSS for the shorten form */
+.wrapper {
+    width: 550px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 25px;
+}
+
+#shorten-form input[type="url"] {
+    background-color: #1d1e20;
+    border: 2px solid #585a5b;
+    border-radius: 4px;
+    padding: 0.95rem;
+    width: 470px;
+    color: #fff;
+    outline: none;
+}
+
+#shorten-form button[type="submit"] {
+    padding: 0.95rem;
+    width: 75px;
+    background-color: #1d1e20;
+    border: 2px solid #585a5b;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* CSS for the shortened URL section */
+#shortened-url {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 0.45rem;
+}
+
+#shortened-url input.shortened-url-text {
+    background-color: #1d1e20;
+    border: 2px solid #585a5b;
+    border-radius: 4px;
+    padding: 0.95rem;
+    width: 427px;
+}
+
+#copy-button {
+    padding: 0.95rem;
+    display: flex;
+    align-items: center;
+    background-color: #1d1e20;
+    border: 2px solid #585a5b;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#copy-button i {
+    margin-right: 0.45rem;
+    font-size: 0.95rem;
+}
+
+/* Toast Container */
+.toast-container {
+    position: fixed;
+    z-index: 10000;
+    bottom: 20px;
+    right: 20px;
+    max-width: 300px;
+}
+/* Toast */
+.toast {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-primary);
+    color: white;
+    font-family: var(--font-family-1);
+    padding: 16px;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    opacity: 1;
+    transform: translateX(100%);
+}
+
+.toast-show {
+    opacity: 1;
+    transform: translateX(0);
+}

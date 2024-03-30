@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkMinify - Minimize Your Links Efficiently</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+    <!-- Semantic Header with navigation -->
+    <header>
+        <div class="branding">
+            <h1 id="logo">LinkMinify</h1>
+        </div>
+        <nav aria-label="Main navigation">
+            <ul class="navigation-list">
+                <li class="navigation-item"><a href="/" class="nav-link">Home</a></li>
+                <li class="navigation-item"><a href="/register" class="nav-link">Start for Free</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content area -->
+    <main>
+        <section>
+            <h1 class="visually-hidden">Shorten Your Links in a Snap!</h1>
+            <p>Make your long URLs manageable, trackable, and shareable with just a click.</p>
+            <div class="wrapper">
+                <form autocomplete="off" id="shorten-form" aria-labelledby="shorten-url">
+                    <input type="url" name="url" id="url" placeholder="Enter your link here...." required
+                        aria-required="true" autofocus="false">
+                    <button type="submit" class="shorten-button">Shorten</button>
+                </form>
+
+                <div id="shortened-url" aria-live="polite">
+                    <input type="text" class="shortened-url-text" disabled>
+                    <button id="copy-button" aria-label="Copy to clipboard"><i class='bx bx-copy'
+                            style='color:#ffffff'></i>Copy Link</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript Files -->
+    <script src="js/index.js"></script>
+</body>
+
+</html>
+
+</html>
