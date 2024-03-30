@@ -17,13 +17,16 @@ shortenBtn.addEventListener("click", async (event) => {
         return;
     }
 
-    const response = await fetch("/api/v1/shorten", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ url }),
-    });
+    const response = await fetch(
+        "https://link-minify.vercel.app/api/v1/shorten",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ url }),
+        }
+    );
     const data = await response.json();
 
     if (response.status === 200) {

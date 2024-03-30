@@ -20,7 +20,9 @@ exports.shorten = (req, res) => {
         flag: "a",
     });
 
-    res.status(200).send({ shortLink: `http://localhost:3000/${shortUrl}` });
+    res.status(200).send({
+        shortLink: `https://link-minify.vercel.app/${shortUrl}`,
+    });
 };
 
 exports.redirectUrl = (req, res) => {
