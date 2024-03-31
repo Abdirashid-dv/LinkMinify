@@ -11,7 +11,7 @@ exports.shorten = async (req, res) => {
         }
 
         const shortCode = shortLink.generate(8);
-        const shortUrl = `https://link-minify.vercel.app/${shortCode}`;
+        const shortUrl = `https://linkminify.vercel.app/${shortCode}`;
         const redirectCode = shortLink.decode(shortCode);
 
         const link = new Link({
@@ -23,7 +23,7 @@ exports.shorten = async (req, res) => {
         await link.save();
 
         res.status(200).send({
-            shortLink: `https://link-minify.vercel.app/${shortCode}`,
+            shortLink: `https://linkminify.vercel.app/${shortCode}`,
         });
     } catch (err) {
         res.status(500).send({ error: "Internal Server Error" });
