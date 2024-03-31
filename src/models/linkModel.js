@@ -9,6 +9,7 @@ const linkSchema = new mongoose.Schema({
     redirectCode: {
         type: Number,
         trim: true,
+        unique: true,
     },
     shortUrl: {
         type: String,

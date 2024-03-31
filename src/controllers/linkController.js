@@ -26,13 +26,13 @@ exports.shorten = async (req, res) => {
             shortLink: `https://link-minify.vercel.app/${link.redirectCode}`,
         });
     } catch (err) {
-        res.status(500).send({ error: `${err}` });
+        res.status(500).send({ error: "Internal Server Error" });
     }
 };
 
 exports.redirectUrl = async (req, res) => {
     try {
-        const redirectCode = req.path.replace("/", "");
+        const redirectCode = shortLink.decode(req.path.replace("/", "").trim());
         const link = await Link.findOne({ redirectCode });
 
         if (!link) {

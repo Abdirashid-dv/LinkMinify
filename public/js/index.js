@@ -16,17 +16,14 @@ shortenBtn.addEventListener("click", async (event) => {
         showToast("Please enter a valid URL");
         return;
     }
-
-    const response = await fetch(
-        "https://link-minify.vercel.app/api/v1/shorten",
-        {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ url }),
-        }
-    );
+    //https://link-minify.vercel.app/api/v1/shorten
+    const response = await fetch("/api/v1/shorten", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url }),
+    });
     const data = await response.json();
 
     if (response.status === 200) {
