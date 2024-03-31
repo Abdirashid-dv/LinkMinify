@@ -16,9 +16,24 @@
             <h1 id="logo">LinkMinify</h1>
         </div>
         <nav aria-label="Main navigation">
-            <ul class="navigation-list">
+            <ul class="sidebar">
+                <li class="navigation-item " onClick=hideSidebar()><a href="#" class="nav-link"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                                fill="#FFFFFF" />
+                        </svg></a></li>
                 <li class="navigation-item"><a href="/" class="nav-link">Home</a></li>
                 <li class="navigation-item"><a href="/register" class="nav-link">Start for Free</a></li>
+            </ul>
+            <ul class="navigation-list">
+                <li class="navigation-item hidden"><a href="/" class="nav-link">Home</a></li>
+                <li class="navigation-item hidden"><a href="/register" class="nav-link">Start for Free</a></li>
+                <li class="navigation-item menu-btn" onClick=showSidebar()><a href="#"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26">
+                            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+                                fill="#FFFFFF" />
+                        </svg></a></li>
             </ul>
         </nav>
     </header>
@@ -27,8 +42,10 @@
     <main>
         <section>
             <h1 class="visually-hidden">Shorten Your Links in a Snap!</h1>
-            <p>Make your long URLs manageable, trackable, and shareable with just a click.</p>
-            <div class="wrapper">
+            <p>Make your long URLs <span class="underline-text">manageable</span>, <span class="underline-text">
+                    trackable</span>, and <span class="underline-text">shareable</span> with just
+                a click.</p>
+            <div class=" wrapper">
                 <form autocomplete="off" id="shorten-form" aria-labelledby="shorten-url">
                     <input type="url" name="url" id="url" placeholder="Enter your link here...." required
                         aria-required="true" autofocus="false">

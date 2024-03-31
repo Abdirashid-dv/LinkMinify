@@ -20,7 +20,7 @@ app.get("/home", (req, res) => {
 });
 
 app.get("/register", (req, res) => {
-    res.send("Register page");
+    res.render("register");
 });
 
 app.use((req, res, next) => {

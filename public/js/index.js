@@ -35,11 +35,19 @@ shortenBtn.addEventListener("click", async (event) => {
 });
 
 copyBtn.addEventListener("click", () => {
-    const copyText = shortenedUrlText;
-    copyText.select();
-    document.execCommand("copy");
-    // shortenedUrlText.value = ""; // Clear the input field
-    showToast("Copied to clipboard");
+    const copyText = shortenedUrlText.value;
+    if (!copyText) {
+        return;
+    }
+
+    navigator.clipboard
+        .writeText(copyText)
+        .then(() => {
+            showToast("Copied to clipboard");
+        })
+        .catch((error) => {
+            console.error("Failed to copy to clipboard:", error);
+        });
 });
 
 function showToast(message) {
@@ -74,4 +82,12 @@ function showToast(message) {
             }
         }, 600); // Wait for the hide transition before removing
     }, 5000);
+}
+
+function showSidebar() {
+    document.querySelector(".sidebar").style.display = "flex";
+}
+
+function hideSidebar() {
+    document.querySelector(".sidebar").style.display = "none";
 }

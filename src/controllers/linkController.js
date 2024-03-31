@@ -23,7 +23,7 @@ exports.shorten = async (req, res) => {
         await link.save();
 
         res.status(200).send({
-            shortLink: `https://link-minify.vercel.app/${link.redirectCode}`,
+            shortLink: `https://link-minify.vercel.app/${shortCode}`,
         });
     } catch (err) {
         res.status(500).send({ error: "Internal Server Error" });

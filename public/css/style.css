@@ -73,12 +73,9 @@ header nav ul {
     color: #fff;
     text-decoration: none;
 }
-.navigation-item:last-child {
+.navigation-item a[href="/register"] {
     background-color: #3361cf;
     padding: 0.5rem 1rem;
-}
-main {
-    padding: 2rem;
 }
 
 main section {
@@ -94,7 +91,18 @@ main section {
     font-weight: 400;
     text-transform: uppercase;
     /* font-size: 4rem; */
-    font-size: clamp(2rem, 1.5172rem + 2.7586vw, 4rem);
+    font-size: clamp(1.275rem, 0.6172rem + 3.7586vw, 4rem);
+}
+
+main section p {
+    font-family: var(--font-family-2);
+    font-weight: var(--font-weight-regular-2);
+    text-align: center;
+}
+
+.underline-text {
+    text-decoration: underline dotted var(--color-primary);
+    text-underline-offset: 0.2em;
 }
 
 /* CSS for the shorten form */
@@ -184,4 +192,74 @@ main section {
 .toast-show {
     opacity: 1;
     transform: translateX(0);
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: rgba(32, 32, 32, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 250px;
+    height: 100vh;
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.sidebar li {
+    text-align: center;
+    width: 100%;
+    padding: 1rem !important;
+    margin-bottom: 0.125rem;
+}
+.menu-btn {
+    display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 0 1rem;
+    }
+    .wrapper {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    #shorten-form input[type="url"] {
+        width: 100%;
+    }
+
+    #shorten-form button[type="submit"] {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    #shortened-url input.shortened-url-text {
+        width: 100%;
+    }
+
+    #copy-button {
+        width: 70%;
+    }
+
+    .navigation-item {
+        margin-right: 0;
+    }
+
+    .hidden {
+        display: none;
+    }
+    .menu-btn {
+        display: block;
+    }
+    main section p {
+        font-size: 0.75rem;
+    }
 }
